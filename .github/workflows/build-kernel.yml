@@ -74,6 +74,7 @@ jobs:
         mkdir clang-aosp
         wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/${{ env.CLANG_BRANCH }}/clang-${{ env.CLANG_VERSION }}.tar.gz
         tar -C clang-aosp/ -zxvf clang-${{ env.CLANG_VERSION }}.tar.gz
+        chmod -R 777 clang-aosp/
 
     - name: Download Custom-Clang
       if: env.USE_CUSTOM_CLANG == 'true'
